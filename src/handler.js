@@ -1,12 +1,7 @@
+// handlers.js
 const { nanoid } = require('nanoid');
 const books = require('./books');
 
-/**
- * Handler to add new book
- * @param {*} request
- * @param {*} h
- * @returns {Object} response
- */
 const addBookHandler = (request, h) => {
   const {
     name, year, author, summary, publisher, pageCount, readPage, reading,
@@ -78,12 +73,6 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-/**
- * Handler to get all books
- * @param {*} request
- * @param {*} h
- * @returns {Object} response
- */
 const getAllBooksHandler = (request, h) => {
   const { name, reading, finished } = request.query;
 
@@ -130,12 +119,6 @@ const getAllBooksHandler = (request, h) => {
   return response;
 };
 
-/**
- * Handler to get book by id
- * @param {*} request
- * @param {*} h
- * @returns {Object} response
- */
 const getBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
 
@@ -162,12 +145,6 @@ const getBookByIdHandler = (request, h) => {
   return response;
 };
 
-/**
- * Handler to edit book by id
- * @param {*} request
- * @param {*} h
- * @returns {Object} response
- */
 const editBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
 
@@ -229,12 +206,6 @@ const editBookByIdHandler = (request, h) => {
   return response;
 };
 
-/**
- * Handler to delete book by id
- * @param {*} request
- * @param {*} h
- * @returns {Object} response
- */
 const deleteBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
 
@@ -261,9 +232,5 @@ const deleteBookByIdHandler = (request, h) => {
 };
 
 module.exports = {
-  addBookHandler,
-  getAllBooksHandler,
-  getBookByIdHandler,
-  editBookByIdHandler,
-  deleteBookByIdHandler,
-};
+  addBookHandler
+}
